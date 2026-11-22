@@ -1,11 +1,27 @@
+import { SiteHeader } from "@/components/SiteHeader";
+import { HeroSection } from "@/components/HeroSection";
+import { Marquee } from "@/components/Marquee";
+import { OpportunitySection } from "@/components/OpportunitySection";
+import { KitSection } from "@/components/KitSection";
+import { NetworkSection } from "@/components/NetworkSection";
+import { RegisterSection } from "@/components/RegisterSection";
+import { OrderSection } from "@/components/OrderSection";
+import { SiteFooter } from "@/components/SiteFooter";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-muted-foreground">
-        BASE-TEMPLATE ready. Fill{" "}
-        <code className="font-mono text-foreground">docs/project-brief.md</code>{" "}
-        and start vibe coding.
-      </p>
-    </main>
+    <>
+      <SiteHeader />
+      <main>
+        <HeroSection />
+        <Marquee />
+        <OpportunitySection />
+        <KitSection />
+        <NetworkSection />
+        <RegisterSection />
+        <OrderSection />
+      </main>
+      <SiteFooter />
+    </>
   );
 }

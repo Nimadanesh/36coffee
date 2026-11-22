@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+pwa/node_modules/
+
+# Next.js build output
+.next/
+pwa/.next/
+pwa/tsconfig.tsbuildinfo
+out/
+pwa/out/
+
+# 36coffee submissions (MVP file storage) — never commit real leads/orders
+data/
+pwa/data/
+
+# Environment / secrets
+.env*
+!.env.example
+
+# Misc
+.DS_Store
+*.log
