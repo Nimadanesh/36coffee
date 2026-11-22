@@ -6,14 +6,16 @@
 
 /*
  * 36coffee — design tokens
- * Palette (researched 2025–2026 coffee trends, see pwa/README.md):
- *  - Cappuccino Foam cream #F6EBDE (2026 trend) — page background
- *  - Espresso Brown #51322D (2026 trend) — deep text accent
- *  - Iced Coffee Amber #EBB881 (2026 trend) — soft highlight
- *  - Forest Green #1E3D2F — primary, deepened from trend Forest Green #25523B
- *  - Burnt Orange #C2571A — espresso-orange CTA, Deep Autumn 2026 trend
- *  - Cafe Sage #7A9E7E — calm secondary accent
- *  - Latte Beige #EFD6B6 — soft surfaces
+ * Palette: STRATA reference (user-chosen, 2026-11-22) — dark chocolate
+ * brown + warm cream + terracotta. Replaces the earlier forest-green /
+ * cream / gold direction (see pwa/README.md).
+ *  - Dark Chocolate #2E1F18 — main background / deep surfaces
+ *  - Deep Roast #1E130D — darkest background (hero, footer)
+ *  - Warm Cream #F6EBDE — text on dark, light sections
+ *  - Latte Beige #EFD6B6 — soft light surfaces
+ *  - Terracotta #C2571A — the single warm accent (eyebrows, numbers)
+ *  - Brass Gold #C9A227 — hairlines and small labels only
+ *  - Iced Coffee Amber #EBB881 — soft highlight
  */
 @theme inline {
   --color-background: var(--background);
@@ -21,14 +23,15 @@
   --font-sans: var(--font-vazirmatn), "Tahoma", ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-vazirmatn), "Tahoma", ui-monospace, monospace;
   --font-heading: var(--font-vazirmatn), "Tahoma", ui-sans-serif, system-ui, sans-serif;
-  --color-pine: var(--pine);
-  --color-pine-deep: var(--pine-deep);
+  --color-choco: var(--choco);
+  --color-choco-deep: var(--choco-deep);
   --color-cream: var(--cream);
   --color-latte: var(--latte);
   --color-espresso: var(--espresso);
-  --color-ember: var(--ember);
+  --color-terra: var(--terra);
+  --color-terra-deep: var(--terra-deep);
+  --color-gold: var(--gold);
   --color-amber-soft: var(--amber-soft);
-  --color-sage: var(--sage);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -68,22 +71,23 @@
 }
 
 :root {
-  --pine: #1e3d2f;
-  --pine-deep: #122a20;
+  --choco: #2e1f18;
+  --choco-deep: #1e130d;
   --cream: #f6ebde;
   --latte: #efd6b6;
   --espresso: #2e1f18;
-  --ember: #c2571a;
+  --terra: #c2571a;
+  --terra-deep: #b4552a;
+  --gold: #c9a227;
   --amber-soft: #ebb881;
-  --sage: #7a9e7e;
-  --background: #f6ebde;
-  --foreground: #2e1f18;
+  --background: #1e130d;
+  --foreground: #f6ebde;
   --card: #fff9f0;
   --card-foreground: #2e1f18;
   --popover: #fff9f0;
   --popover-foreground: #2e1f18;
-  --primary: #1e3d2f;
-  --primary-foreground: #f6ebde;
+  --primary: #f6ebde;
+  --primary-foreground: #1e130d;
   --secondary: #efd6b6;
   --secondary-foreground: #2e1f18;
   --muted: #eee1cd;
@@ -94,49 +98,49 @@
   --border: #ddcbb2;
   --input: #ddcbb2;
   --ring: #c2571a;
-  --chart-1: #1e3d2f;
+  --chart-1: #2e1f18;
   --chart-2: #c2571a;
-  --chart-3: #7a9e7e;
+  --chart-3: #c9a227;
   --chart-4: #ebb881;
-  --chart-5: #51322d;
-  --radius: 1rem;
-  --sidebar: #f6ebde;
-  --sidebar-foreground: #2e1f18;
-  --sidebar-primary: #1e3d2f;
-  --sidebar-primary-foreground: #f6ebde;
-  --sidebar-accent: #efd6b6;
-  --sidebar-accent-foreground: #2e1f18;
-  --sidebar-border: #ddcbb2;
+  --chart-5: #efd6b6;
+  --radius: 0.125rem;
+  --sidebar: #1e130d;
+  --sidebar-foreground: #f6ebde;
+  --sidebar-primary: #f6ebde;
+  --sidebar-primary-foreground: #1e130d;
+  --sidebar-accent: #2e1f18;
+  --sidebar-accent-foreground: #f6ebde;
+  --sidebar-border: #3d2b20;
   --sidebar-ring: #c2571a;
 }
 
 .dark {
-  --background: #122a20;
+  --background: #1e130d;
   --foreground: #f6ebde;
-  --card: #1e3d2f;
+  --card: #2e1f18;
   --card-foreground: #f6ebde;
-  --popover: #1e3d2f;
+  --popover: #2e1f18;
   --popover-foreground: #f6ebde;
-  --primary: #ebb881;
-  --primary-foreground: #122a20;
-  --secondary: #2a4a3a;
+  --primary: #f6ebde;
+  --primary-foreground: #1e130d;
+  --secondary: #3d2b20;
   --secondary-foreground: #f6ebde;
-  --muted: #2a4a3a;
+  --muted: #3d2b20;
   --muted-foreground: #c9bda9;
   --accent: #c2571a;
   --accent-foreground: #fff9f0;
   --destructive: #e0786f;
-  --border: #2a4a3a;
-  --input: #2a4a3a;
-  --ring: #ebb881;
-  --sidebar: #122a20;
+  --border: #3d2b20;
+  --input: #3d2b20;
+  --ring: #c2571a;
+  --sidebar: #1e130d;
   --sidebar-foreground: #f6ebde;
-  --sidebar-primary: #ebb881;
-  --sidebar-primary-foreground: #122a20;
-  --sidebar-accent: #2a4a3a;
+  --sidebar-primary: #f6ebde;
+  --sidebar-primary-foreground: #1e130d;
+  --sidebar-accent: #2e1f18;
   --sidebar-accent-foreground: #f6ebde;
-  --sidebar-border: #2a4a3a;
-  --sidebar-ring: #ebb881;
+  --sidebar-border: #3d2b20;
+  --sidebar-ring: #c2571a;
 }
 
 @layer base {
@@ -157,35 +161,13 @@
   }
 }
 
-/* Motion: marquee, steam, gentle float + reveal. */
+/* Motion: quiet marquee + gentle reveal only. */
 @keyframes marquee-x {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-50%);
-  }
-}
-@keyframes steam-rise {
-  0% {
-    opacity: 0;
-    transform: translateY(6px) scaleX(1);
-  }
-  40% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-14px) scaleX(1.4);
-  }
-}
-@keyframes float-soft {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
   }
 }
 @keyframes fade-up {
@@ -200,19 +182,69 @@
 }
 
 .marquee-track {
-  animation: marquee-x 26s linear infinite;
-}
-.steam-line {
-  animation: steam-rise 2.8s ease-in-out infinite;
-}
-.steam-line-delayed {
-  animation: steam-rise 2.8s ease-in-out 0.9s infinite;
-}
-.float-soft {
-  animation: float-soft 5s ease-in-out infinite;
+  animation: marquee-x 30s linear infinite;
 }
 .fade-up {
   animation: fade-up 0.7s ease-out both;
+}
+
+/* STRATA scenes — slow, gentle motion only (never fast, never cartoonish). */
+@keyframes bean-turn {
+  0% {
+    transform: rotateY(-24deg) translateY(0);
+  }
+  50% {
+    transform: rotateY(20deg) translateY(-12px);
+  }
+  100% {
+    transform: rotateY(-24deg) translateY(0);
+  }
+}
+@keyframes drift-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+@keyframes ken-burns-slow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+
+.bean-stage {
+  perspective: 1200px;
+}
+.bean-turn {
+  animation: bean-turn 14s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+.drift-slow {
+  animation: drift-slow 9s ease-in-out infinite;
+}
+.ken-burns-slow {
+  animation: ken-burns-slow 18s ease-in-out infinite alternate;
+}
+
+/* Subtle warm glow behind the hero type — no illustration, no image. */
+.hero-glow {
+  background:
+    radial-gradient(
+      60% 45% at 50% 0%,
+      rgba(194, 87, 26, 0.22),
+      transparent 70%
+    ),
+    radial-gradient(
+      45% 35% at 85% 100%,
+      rgba(201, 162, 39, 0.1),
+      transparent 70%
+    );
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -220,10 +252,10 @@
     scroll-behavior: auto;
   }
   .marquee-track,
-  .steam-line,
-  .steam-line-delayed,
-  .float-soft,
-  .fade-up {
+  .fade-up,
+  .bean-turn,
+  .drift-slow,
+  .ken-burns-slow {
     animation: none;
   }
 }

@@ -11,7 +11,7 @@ import {
 } from "@/lib/validation";
 
 const inputCls =
-  "w-full rounded-2xl border border-input bg-card px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/40";
+  "w-full rounded-sm border border-input bg-card px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/40";
 
 export function OrderSection() {
   const [packs, setPacks] = useState<number>(1);
@@ -87,11 +87,11 @@ export function OrderSection() {
 
   if (doneId) {
     return (
-      <section id="order" className="scroll-mt-20">
+      <section id="order" className="scroll-mt-20 bg-cream text-espresso">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
-          <div className="mx-auto max-w-2xl rounded-3xl border border-border bg-card p-8 text-center shadow-sm">
-            <CircleCheck className="mx-auto size-14 text-sage" aria-hidden />
-            <h2 className="mt-4 text-2xl font-black text-pine">سفارشت ثبت شد.</h2>
+          <div className="mx-auto max-w-2xl rounded-sm border border-border bg-card p-8 text-center shadow-sm">
+            <CircleCheck className="mx-auto size-14 text-terra" aria-hidden />
+            <h2 className="mt-4 text-2xl font-black text-espresso">سفارشت ثبت شد.</h2>
             <p className="mt-3 leading-8 text-espresso/80">
               {toFaDigits(packs)} پکیج ۱۰۰تایی — یعنی {toFaDigits(packs * CUPS_PER_PACK)}{" "}
               فنجان کامل — برای ایستگاه {form.stationName} ثبت شد.
@@ -108,7 +108,7 @@ export function OrderSection() {
                 setPacks(1);
                 setForm({ stationName: "", mobile: "", cityArea: "", note: "" });
               }}
-              className="mt-6 rounded-full border-2 border-pine px-6 py-2.5 text-sm font-bold text-pine"
+              className="mt-6 rounded-full border-2 border-espresso px-6 py-2.5 text-sm font-bold text-espresso"
             >
               ثبت سفارش تازه
             </button>
@@ -119,12 +119,15 @@ export function OrderSection() {
   }
 
   return (
-    <section id="order" className="scroll-mt-20">
+    <section id="order" className="scroll-mt-20 bg-cream text-espresso">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
         <div className="grid gap-8 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <p className="text-sm font-bold text-ember">سفارش پکیج</p>
-            <h2 className="mt-3 text-3xl leading-snug font-black text-pine sm:text-4xl">
+            <p className="flex items-center gap-3 text-xs font-bold tracking-wide text-terra">
+              <span className="inline-block h-px w-10 bg-terra" aria-hidden />
+              ۰۸ — سفارش پکیج
+            </p>
+            <h2 className="mt-5 text-3xl leading-snug font-black sm:text-4xl">
               پکیج ۱۰۰تایی سفارش بده.
             </h2>
             <p className="mt-4 leading-8 text-espresso/80">
@@ -132,7 +135,7 @@ export function OrderSection() {
               می‌شود و تیم فروش برای تأیید نهایی و هماهنگی تحویل با تو تماس
               می‌گیرد.
             </p>
-            <div className="mt-6 rounded-3xl bg-pine p-6 text-cream">
+            <div className="mt-6 rounded-sm bg-choco p-6 text-cream">
               <p className="text-sm font-bold text-amber-soft">جمع فنجان‌ها</p>
               <p className="mt-1 text-4xl font-black">
                 {toFaDigits(packs * CUPS_PER_PACK)} فنجان
@@ -140,7 +143,7 @@ export function OrderSection() {
               <p className="mt-2 text-sm leading-7 text-cream/80">
                 {toFaDigits(packs)} پکیج × {toFaDigits(CUPS_PER_PACK)} فنجان
               </p>
-              <p className="mt-3 border-t border-white/15 pt-3 text-sm leading-7 text-cream/80">
+              <p className="mt-3 border-t border-cream/15 pt-3 text-sm leading-7 text-cream/80">
                 قیمت نهایی را تیم فروش موقع تماس تأیید می‌کند.
               </p>
             </div>
@@ -148,7 +151,7 @@ export function OrderSection() {
 
           <form
             onSubmit={handleSubmit}
-            className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8 lg:col-span-3"
+            className="rounded-sm border border-border bg-card p-6 shadow-sm sm:p-8 lg:col-span-3"
             noValidate
           >
             <label className="block text-sm font-bold text-espresso">
@@ -159,18 +162,18 @@ export function OrderSection() {
                 type="button"
                 aria-label="کم کردن تعداد"
                 onClick={() => setPacks((p) => clampPacks(p - 1))}
-                className="flex size-12 items-center justify-center rounded-full border border-border bg-cream text-pine"
+                className="flex size-12 items-center justify-center rounded-full border border-border bg-cream text-espresso"
               >
                 <Minus className="size-5" aria-hidden />
               </button>
-              <span className="min-w-16 text-center text-3xl font-black text-pine">
+              <span className="min-w-16 text-center text-3xl font-black text-espresso">
                 {toFaDigits(packs)}
               </span>
               <button
                 type="button"
                 aria-label="زیاد کردن تعداد"
                 onClick={() => setPacks((p) => clampPacks(p + 1))}
-                className="flex size-12 items-center justify-center rounded-full border border-border bg-cream text-pine"
+                className="flex size-12 items-center justify-center rounded-full border border-border bg-cream text-espresso"
               >
                 <Plus className="size-5" aria-hidden />
               </button>
@@ -182,8 +185,8 @@ export function OrderSection() {
                     onClick={() => setPacks(choice)}
                     className={
                       packs === choice
-                        ? "rounded-full bg-pine px-4 py-2 text-sm font-bold text-cream"
-                        : "rounded-full border border-border bg-cream px-4 py-2 text-sm font-bold text-pine"
+                        ? "rounded-full bg-choco px-4 py-2 text-sm font-bold text-cream"
+                        : "rounded-full border border-border bg-cream px-4 py-2 text-sm font-bold text-espresso"
                     }
                   >
                     {toFaDigits(choice)}
@@ -276,7 +279,7 @@ export function OrderSection() {
             <button
               type="submit"
               disabled={submitting}
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-pine px-6 py-3.5 text-base font-bold text-cream transition hover:bg-pine-deep disabled:opacity-60"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-choco px-6 py-3.5 text-base font-bold text-cream transition hover:bg-choco-deep disabled:opacity-60"
             >
               <ShoppingBag className="size-5" aria-hidden />
               {submitting ? "در حال ثبت…" : "ثبت سفارش"}

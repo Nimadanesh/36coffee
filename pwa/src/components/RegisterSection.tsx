@@ -10,7 +10,7 @@ import {
 } from "@/lib/validation";
 
 const inputCls =
-  "w-full rounded-2xl border border-input bg-card px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/40";
+  "w-full rounded-sm border border-input bg-card px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/40";
 
 type Step = "form" | "otp" | "done";
 
@@ -97,15 +97,18 @@ export function RegisterSection() {
   }
 
   return (
-    <section id="register" className="scroll-mt-20 bg-latte/60">
+    <section id="register" className="scroll-mt-20 bg-choco-deep text-cream">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
         <div className="grid gap-8 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <p className="text-sm font-bold text-ember">ثبت درخواست همکاری</p>
-            <h2 className="mt-3 text-3xl leading-snug font-black text-pine sm:text-4xl">
+            <p className="flex items-center gap-3 text-xs font-bold tracking-wide text-amber-soft">
+              <span className="inline-block h-px w-10 bg-amber-soft" aria-hidden />
+              ۰۷ — ثبت درخواست همکاری
+            </p>
+            <h2 className="mt-5 text-3xl leading-snug font-black sm:text-4xl">
               ایستگاهت را به شبکه 36coffee معرفی کن.
             </h2>
-            <p className="mt-4 leading-8 text-espresso/80">
+            <p className="mt-4 leading-8 text-cream/75">
               فقط همین چند فیلد را پر کن. بعد کد تأیید را وارد می‌کنی و درخواستت
               ثبت می‌شود؛ تیم فروش برای پیگیری با تو تماس می‌گیرد.
             </p>
@@ -118,13 +121,13 @@ export function RegisterSection() {
                         (step === "form" && index === 0) ||
                         (step === "otp" && index === 1) ||
                         (step === "done" && index === 2)
-                          ? "flex size-8 items-center justify-center rounded-full bg-ember text-sm font-black text-white"
-                          : "flex size-8 items-center justify-center rounded-full bg-card text-sm font-black text-pine"
+                          ? "flex size-8 items-center justify-center rounded-full bg-terra text-sm font-black text-white"
+                          : "flex size-8 items-center justify-center rounded-full border border-cream/30 bg-cream/10 text-sm font-black text-cream"
                       }
                     >
                       {index + 1}
                     </span>
-                    <span className="font-medium text-espresso">{label}</span>
+                    <span className="font-medium text-cream/85">{label}</span>
                   </li>
                 ),
               )}
@@ -133,12 +136,12 @@ export function RegisterSection() {
 
           <div className="lg:col-span-3">
             {step === "done" ? (
-              <div className="rounded-3xl border border-border bg-card p-8 text-center shadow-sm">
+              <div className="rounded-sm border border-border bg-cream p-8 text-center shadow-sm">
                 <CircleCheck
-                  className="mx-auto size-14 text-sage"
+                  className="mx-auto size-14 text-terra"
                   aria-hidden
                 />
-                <h3 className="mt-4 text-2xl font-black text-pine">
+                <h3 className="mt-4 text-2xl font-black text-espresso">
                   درخواستت ثبت شد.
                 </h3>
                 <p className="mt-3 leading-8 text-espresso/80">
@@ -158,7 +161,7 @@ export function RegisterSection() {
                       locationType: LOCATION_TYPES[0],
                     });
                   }}
-                  className="mt-6 rounded-full border-2 border-pine px-6 py-2.5 text-sm font-bold text-pine"
+                  className="mt-6 rounded-full border-2 border-espresso px-6 py-2.5 text-sm font-bold text-espresso"
                 >
                   ثبت درخواست تازه
                 </button>
@@ -166,23 +169,23 @@ export function RegisterSection() {
             ) : step === "otp" ? (
               <form
                 onSubmit={handleOtpSubmit}
-                className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8"
+                className="rounded-sm border border-border bg-cream p-6 shadow-sm sm:p-8"
               >
-                <h3 className="flex items-center gap-2 text-xl font-black text-pine">
-                  <Phone className="size-5 text-ember" aria-hidden />
+                <h3 className="flex items-center gap-2 text-xl font-black text-espresso">
+                  <Phone className="size-5 text-terra" aria-hidden />
                   کد تأیید موبایل
                 </h3>
                 <p className="mt-2 leading-7 text-espresso/80">
                   کد را به شماره {form.mobile} می‌فرستیم — در این نسخه نمایشی،
                   پیامک واقعی ارسال نمی‌شود.
                 </p>
-                <div className="mt-4 rounded-2xl border-2 border-dashed border-ember bg-latte/70 p-4 text-center">
-                  <p className="text-xs font-bold text-ember">
+                <div className="mt-4 rounded-sm border-2 border-dashed border-terra bg-latte/70 p-4 text-center">
+                  <p className="text-xs font-bold text-terra">
                     کد نمایشی (دمو)
                   </p>
                   <p
                     dir="ltr"
-                    className="mt-1 text-3xl font-black tracking-[0.3em] text-pine"
+                    className="mt-1 text-3xl font-black tracking-[0.3em] text-espresso"
                   >
                     {demoCode}
                   </p>
@@ -221,7 +224,7 @@ export function RegisterSection() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-ember px-6 py-3.5 text-base font-bold text-white disabled:opacity-60"
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-terra px-6 py-3.5 text-base font-bold text-white disabled:opacity-60"
                   >
                     <BadgeCheck className="size-5" aria-hidden />
                     {submitting ? "در حال ثبت…" : "تأیید و ثبت درخواست"}
@@ -233,7 +236,7 @@ export function RegisterSection() {
                       setOtpInput("");
                       setOtpError("");
                     }}
-                    className="rounded-full border-2 border-pine px-6 py-3.5 text-sm font-bold text-pine"
+                    className="rounded-full border-2 border-espresso px-6 py-3.5 text-sm font-bold text-espresso"
                   >
                     ارسال دوباره کد
                   </button>
@@ -249,7 +252,7 @@ export function RegisterSection() {
             ) : (
               <form
                 onSubmit={handleFormSubmit}
-                className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8"
+                className="rounded-sm border border-border bg-cream p-6 shadow-sm sm:p-8"
                 noValidate
               >
                 <div className="grid gap-4 sm:grid-cols-2">
@@ -352,7 +355,7 @@ export function RegisterSection() {
                 ) : null}
                 <button
                   type="submit"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ember px-6 py-3.5 text-base font-bold text-white transition hover:bg-ember/90"
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-terra px-6 py-3.5 text-base font-bold text-white transition hover:bg-terra-deep"
                 >
                   <Send className="size-5" aria-hidden />
                   ارسال کد تأیید

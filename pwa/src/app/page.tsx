@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/SiteHeader";
 import { HeroSection } from "@/components/HeroSection";
+import { StrataScenes } from "@/components/StrataScenes";
 import { Marquee } from "@/components/Marquee";
 import { OpportunitySection } from "@/components/OpportunitySection";
 import { KitSection } from "@/components/KitSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <SiteHeader />
       <main>
         <HeroSection />
+        <StrataScenes />
         <Marquee />
         <OpportunitySection />
         <KitSection />

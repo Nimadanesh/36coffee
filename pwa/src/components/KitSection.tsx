@@ -1,24 +1,19 @@
-import { Bean, CupSoda, ShieldCheck, Sparkles } from "lucide-react";
 import { toFaDigits } from "@/lib/validation";
 
 const KIT_ITEMS = [
   {
-    icon: CupSoda,
     title: "لیوان",
     spec: "لیوان مارک‌دار 36coffee",
   },
   {
-    icon: Bean,
     title: "ساشه قهوه",
     spec: "پودر قهوه آسیاب‌شده، ۱۷ تا ۱۸ گرم",
   },
   {
-    icon: ShieldCheck,
     title: "درب لیوان",
     spec: "درب لیوان، برای هر فنجان",
   },
   {
-    icon: Sparkles,
     title: "شکلات",
     spec: "شکلات ۳ تا ۵ گرمی، کنار هر فنجان",
   },
@@ -33,43 +28,45 @@ const STEPS = [
 
 export function KitSection() {
   return (
-    <section id="kit" className="scroll-mt-20 bg-latte/60">
+    <section id="kit" className="scroll-mt-20 bg-choco text-cream">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
-        <p className="text-sm font-bold text-ember">معرفی محصول</p>
-        <h2 className="mt-3 max-w-2xl text-3xl leading-snug font-black text-pine sm:text-4xl">
+        <p className="flex items-center gap-3 text-xs font-bold tracking-wide text-amber-soft">
+          <span className="inline-block h-px w-10 bg-amber-soft" aria-hidden />
+          ۰۵ — معرفی محصول
+        </p>
+        <h2 className="mt-5 max-w-2xl text-3xl leading-snug font-black sm:text-4xl">
           از تهیه مواد اولیه تا یک فنجان کامل؛ همه‌چیز آماده است.
         </h2>
-        <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-pine px-5 py-2 text-base font-bold text-cream">
+        <p className="mt-6 inline-flex items-center rounded-full border border-cream/60 px-5 py-2 text-base font-bold text-cream">
           ۱۰۰ فنجان کامل، در یک پکیج آماده.
         </p>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10">
           {KIT_ITEMS.map((item, index) => (
             <article
               key={item.title}
-              className="relative overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-sm"
+              className="flex items-start gap-5 border-t border-cream/15 py-6 last:border-b"
             >
-              <span className="absolute top-4 left-4 rounded-full bg-cream px-2.5 py-1 text-xs font-black text-pine">
+              <span className="pt-1 text-sm font-black text-amber-soft">
                 {toFaDigits(index + 1)}
               </span>
-              <span className="flex size-12 items-center justify-center rounded-2xl bg-ember text-white">
-                <item.icon className="size-6" aria-hidden />
-              </span>
-              <h3 className="mt-4 text-xl font-black text-pine">{item.title}</h3>
-              <p className="mt-2 leading-7 text-espresso/80">{item.spec}</p>
+              <div>
+                <h3 className="text-xl font-black">{item.title}</h3>
+                <p className="mt-1 leading-7 text-cream/75">{item.spec}</p>
+              </div>
             </article>
           ))}
         </div>
 
-        <div className="mt-8 rounded-3xl bg-pine p-6 text-cream sm:p-8">
+        <div className="mt-10 border-t border-cream/15 pt-8">
           <h3 className="text-lg font-black">یک فنجان کامل، در چهار قدم</h3>
-          <ol className="mt-4 grid gap-3 sm:grid-cols-4">
+          <ol className="mt-5 grid gap-4 sm:grid-cols-4">
             {STEPS.map((step, index) => (
               <li key={step} className="flex items-start gap-3">
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-ember text-sm font-black text-white">
+                <span className="flex size-8 shrink-0 items-center justify-center border border-gold/60 text-sm font-black text-gold">
                   {toFaDigits(index + 1)}
                 </span>
-                <span className="pt-1 leading-7">{step}</span>
+                <span className="pt-1 leading-7 text-cream/85">{step}</span>
               </li>
             ))}
           </ol>

@@ -1,21 +1,17 @@
-import { Coffee } from "lucide-react";
-
 export function SiteFooter() {
   return (
-    <footer className="bg-pine-deep text-cream">
+    <footer className="bg-choco-deep text-cream">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
-            <p className="flex items-center gap-2">
-              <span className="flex size-10 items-center justify-center rounded-2xl bg-ember text-white">
-                <Coffee className="size-5" aria-hidden />
-              </span>
-              <span className="text-2xl font-black">36coffee</span>
-            </p>
+            <p className="text-2xl font-black">36coffee</p>
             <p className="mt-4 text-lg font-bold">
               بیشتر از قهوه. یک فرصت برای رشد.
             </p>
-            <p dir="ltr" className="mt-1 text-left text-sm font-bold text-amber-soft">
+            <p
+              dir="ltr"
+              className="mt-1 text-left text-sm font-bold text-amber-soft"
+            >
               YOUR STATION. YOUR BUSINESS.
             </p>
           </div>
@@ -40,7 +36,7 @@ export function SiteFooter() {
             </a>
           </nav>
         </div>
-        <div className="mt-10 border-t border-white/15 pt-6 text-sm leading-7 text-cream/70">
+        <div className="mt-10 border-t border-gold/25 pt-6 text-sm leading-7 text-cream/70">
           <p>
             شماره تماس و ایمیل 36coffee هنوز مشخص نشده است؛ بعد از ثبت‌نام، تیم
             فروش برای پیگیری با شما تماس می‌گیرد.

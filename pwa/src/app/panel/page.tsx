@@ -28,17 +28,18 @@ export default async function PanelPage() {
   ]);
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-      <p className="rounded-2xl border-2 border-dashed border-ember bg-latte/60 p-4 text-sm leading-7 font-medium text-espresso">
+    <main className="min-h-screen bg-cream text-espresso">
+      <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
+      <p className="rounded-sm border-2 border-dashed border-terra bg-latte/60 p-4 text-sm leading-7 font-medium text-espresso">
         نمای مدیریتی موقت — بدون احراز هویت. فقط برای نسخه نمایشی است؛ در
         نسخه واقعی باید ورود مدیر و دیتابیس واقعی اضافه شود. رکوردها در فایل
         JSON ذخیره می‌شوند و در گیت کامیت نمی‌شوند.
       </p>
 
-      <h1 className="mt-8 text-3xl font-black text-pine">پنل 36coffee</h1>
+      <h1 className="mt-8 text-3xl font-black text-espresso">پنل 36coffee</h1>
 
       <section className="mt-8">
-        <h2 className="text-xl font-black text-pine">
+        <h2 className="text-xl font-black text-espresso">
           درخواست‌های همکاری ({toFaDigits(leads.length)})
         </h2>
         {leads.length === 0 ? (
@@ -46,10 +47,10 @@ export default async function PanelPage() {
             هنوز درخواستی ثبت نشده است.
           </p>
         ) : (
-          <div className="mt-4 overflow-x-auto rounded-3xl border border-border bg-card">
+          <div className="mt-4 overflow-x-auto rounded-sm border border-border bg-card">
             <table className="w-full min-w-[640px] text-right text-sm">
               <thead>
-                <tr className="border-b border-border bg-cream text-pine">
+                <tr className="border-b border-border bg-cream text-espresso">
                   <th className="px-4 py-3 font-bold">ایستگاه</th>
                   <th className="px-4 py-3 font-bold">صاحب ایستگاه</th>
                   <th className="px-4 py-3 font-bold">موبایل</th>
@@ -80,7 +81,7 @@ export default async function PanelPage() {
       </section>
 
       <section className="mt-10">
-        <h2 className="text-xl font-black text-pine">
+        <h2 className="text-xl font-black text-espresso">
           سفارش‌ها ({toFaDigits(orders.length)})
         </h2>
         {orders.length === 0 ? (
@@ -88,10 +89,10 @@ export default async function PanelPage() {
             هنوز سفارشی ثبت نشده است.
           </p>
         ) : (
-          <div className="mt-4 overflow-x-auto rounded-3xl border border-border bg-card">
+          <div className="mt-4 overflow-x-auto rounded-sm border border-border bg-card">
             <table className="w-full min-w-[640px] text-right text-sm">
               <thead>
-                <tr className="border-b border-border bg-cream text-pine">
+                <tr className="border-b border-border bg-cream text-espresso">
                   <th className="px-4 py-3 font-bold">ایستگاه</th>
                   <th className="px-4 py-3 font-bold">موبایل</th>
                   <th className="px-4 py-3 font-bold">شهر و محدوده</th>
@@ -124,10 +125,11 @@ export default async function PanelPage() {
       </section>
 
       <p className="mt-8">
-        <Link href="/" className="font-bold text-ember underline underline-offset-4">
+        <Link href="/" className="font-bold text-terra underline underline-offset-4">
           بازگشت به صفحه اصلی
         </Link>
       </p>
+      </div>
     </main>
   );
 }
